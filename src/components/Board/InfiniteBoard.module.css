@@ -1,0 +1,189 @@
+.boardContainer {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-color: var(--color-bg);
+    background-image: radial-gradient(#ddd 1px, transparent 1px);
+    background-size: 20px 20px;
+    /* Grid dots */
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    /* This needs to be large enough to hold content? 
+     Actually, transform handles visual. 
+     We can set a min size or let it grow.
+  */
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+.canvasContent {
+    position: relative;
+    /* Centering logic if needed, or just let layout dictate absolute positions */
+    /* Add padding so nodes aren't cut off at negative coords if any */
+    /* Since we layout starting at 0,0 or negative, we might need to offset everything to center */
+    padding: 2000px;
+    /* Huge padding to allow panning into negative space effectively */
+}
+
+.controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: white;
+    padding: 8px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    z-index: 100;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.controls button {
+    background: transparent;
+    padding: 8px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    transition: background 0.2s;
+}
+
+.controls button:hover {
+    background: #f0f0f0;
+    color: #000;
+}
+
+.searchWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.searchBox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f5f5f5;
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    transition: all 0.2s;
+}
+
+.searchBox:focus-within {
+    background: white;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.searchBox input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 14px;
+    width: 150px;
+    color: #333;
+}
+
+.searchResults {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid #eee;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.searchResults button {
+    width: 100%;
+    padding: 10px 12px;
+    text-align: left;
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+    color: #444;
+}
+
+.searchResults button:hover {
+    background: #f8f9fa;
+    color: #000;
+}
+
+.separator {
+    width: 1px;
+    height: 24px;
+    background: #eee;
+    margin: 0 4px;
+}
+
+/* Dark Mode Overrides */
+.darkMode {
+    --color-bg: #1e1e1e;
+    /* Dark Grey Background */
+    --color-line: #a0a0a0;
+    /* Lighter Line for contrast */
+
+    background-color: var(--color-bg);
+    background-image: radial-gradient(#444 1px, transparent 1px);
+    /* Darker dots */
+}
+
+.darkMode .controls {
+    background: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.darkMode .searchBox {
+    background: #444;
+    border-color: #555;
+}
+
+.darkMode .searchBox input {
+    color: #eee;
+}
+
+.darkMode .searchBox:focus-within {
+    background: #555;
+}
+
+.darkMode .searchResults {
+    background: #333;
+    border-color: #555;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+.darkMode .searchResults button {
+    color: #ccc;
+}
+
+.darkMode .searchResults button:hover {
+    background: #444;
+    color: #fff;
+}
+
+.darkMode .controls button {
+    color: #eee;
+}
+
+.darkMode .controls button:hover {
+    background: #444;
+    color: #fff;
+}
+
+.darkMode .separator {
+    background: #555;
+}

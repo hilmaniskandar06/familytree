@@ -1,0 +1,44 @@
+:root {
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  /* Pastel Palette */
+  --color-bg: #FDFCF0;
+  --color-text: #4A4A4A;
+  --color-line: #BDBDBD;
+  
+  --note-blue: #C5E1E5;
+  --note-pink: #FAD2E1;
+  --note-yellow: #FFF5BA;
+  --note-green: #CDEAC0;
+  --note-purple: #E2D1F9;
+  
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  overflow: hidden; /* For infinite board */
+  width: 100vw;
+  height: 100vh;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+/* Scrollbar hide for cleaner look if needed */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}

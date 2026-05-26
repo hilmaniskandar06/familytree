@@ -9,6 +9,7 @@ import { toPng } from 'html-to-image';
 import styles from './InfiniteBoard.module.css';
 
 import EditModal from '../EditModal/EditModal';
+import FamilyStats from '../Stats/FamilyStats';
 
 const InfiniteBoard = () => {
     const { nodes, addSpouse, addChild, deleteNode, updateNode, resetTree, isAdmin, toggleAdmin } = useFamily();
@@ -73,6 +74,8 @@ const InfiniteBoard = () => {
                 onClose={() => setEditingNode(null)}
                 onSave={updateNode}
             />
+
+            <FamilyStats />
 
             <TransformWrapper
                 initialScale={0.8}

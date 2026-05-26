@@ -1,0 +1,104 @@
+.statsPanel {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: all 0.3s ease;
+}
+
+.dark .statsPanel {
+    background: rgba(30, 30, 30, 0.85);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+}
+
+.statsHeader {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #555;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding-bottom: 8px;
+}
+
+.dark .statsHeader {
+    color: #ccc;
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+}
+
+.statItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.02);
+    padding: 6px 10px;
+    border-radius: 8px;
+}
+
+.dark .statItem {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.statLabel {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.dark .statLabel {
+    color: #bbb;
+}
+
+.statValue {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.dark .statValue {
+    color: #fff;
+}
+
+.totalFooter {
+    font-size: 0.8rem;
+    color: #888;
+    text-align: center;
+    padding-top: 4px;
+}
+
+.dark .totalFooter {
+    color: #777;
+}
+
+@media (max-width: 600px) {
+    .statsPanel {
+        bottom: 80px; /* Space for mobile controls if any */
+        left: 12px;
+        right: 12px;
+        min-width: auto;
+    }
+    
+    .statsGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
